@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		935DB2EC2A2DF4AC007F668D /* finiensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DB2EB2A2DF4AC007F668D /* finiensApp.swift */; };
-		935DB2EE2A2DF4AC007F668D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DB2ED2A2DF4AC007F668D /* ContentView.swift */; };
+		935DB2EE2A2DF4AC007F668D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DB2ED2A2DF4AC007F668D /* HomeView.swift */; };
 		935DB2F02A2DF4AE007F668D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935DB2EF2A2DF4AE007F668D /* Assets.xcassets */; };
 		935DB2F32A2DF4AE007F668D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935DB2F22A2DF4AE007F668D /* Preview Assets.xcassets */; };
 		935DB2FB2A2DF624007F668D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 935DB2FA2A2DF624007F668D /* ComposableArchitecture */; };
+		935DB2FD2A2F45C4007F668D /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DB2FC2A2F45C4007F668D /* HomeStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		935DB2E82A2DF4AC007F668D /* finiens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finiens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		935DB2EB2A2DF4AC007F668D /* finiensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finiensApp.swift; sourceTree = "<group>"; };
-		935DB2ED2A2DF4AC007F668D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		935DB2ED2A2DF4AC007F668D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		935DB2EF2A2DF4AE007F668D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		935DB2F22A2DF4AE007F668D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		935DB2FC2A2F45C4007F668D /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				935DB2EB2A2DF4AC007F668D /* finiensApp.swift */,
-				935DB2ED2A2DF4AC007F668D /* ContentView.swift */,
+				935DB2ED2A2DF4AC007F668D /* HomeView.swift */,
+				935DB2FC2A2F45C4007F668D /* HomeStore.swift */,
 				935DB2EF2A2DF4AE007F668D /* Assets.xcassets */,
 				935DB2F12A2DF4AE007F668D /* Preview Content */,
 			);
@@ -145,7 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935DB2EE2A2DF4AC007F668D /* ContentView.swift in Sources */,
+				935DB2EE2A2DF4AC007F668D /* HomeView.swift in Sources */,
+				935DB2FD2A2F45C4007F668D /* HomeStore.swift in Sources */,
 				935DB2EC2A2DF4AC007F668D /* finiensApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
