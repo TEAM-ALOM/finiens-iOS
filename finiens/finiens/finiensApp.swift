@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct finiensApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(
+                store: Store(
+                    initialState: HomeFeature.HomeState(),
+                    reducer: HomeFeature()
+                )
+            )
         }
     }
 }
