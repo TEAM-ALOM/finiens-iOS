@@ -1,33 +1,15 @@
 //
-//  ContentView.swift
+//  ViewA.swift
 //  antenna
 //
-//  Created by 김휘선 on 2023/07/05.
+//  Created by 김휘선 on 2023/07/06.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct ViewA: View {
     var body: some View {
-        TabView{
-            ViewA()
-                .tabItem(){
-                    Image(systemName: "house.fill")
-                    Text("홈")
-                }
-                ViewB()
-                    .tabItem(){
-                        Image(systemName: "map.fill")
-                        Text("지도")
-                    }
-                ViewC()
-                    .tabItem(){
-                        Image(systemName: "line.3.horizontal")
-                        Text("메뉴")
-                    }
-        }
-        
-        /*VStack(){
+        VStack(){
             
             HStack{
                 Text("안테나")
@@ -52,15 +34,12 @@ struct ContentView: View {
             
             Spacer()
             
-        }*/
-        
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ViewA_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ViewA()
     }
 }
-
-
