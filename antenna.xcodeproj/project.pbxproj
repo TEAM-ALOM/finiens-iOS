@@ -16,7 +16,6 @@
 		F34566CE2A55A75400C160C6 /* antennaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566CD2A55A75400C160C6 /* antennaUITestsLaunchTests.swift */; };
 		F38B56352A57DC200091A6AF /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B56342A57DC200091A6AF /* MyList.swift */; };
 		F38B56372A57E2B90091A6AF /* MyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B56362A57E2B90091A6AF /* MyCard.swift */; };
-		F39A72CA2A565A7C000AFA32 /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A72C92A565A7C000AFA32 /* MyButtonStyle.swift */; };
 		F39A72CC2A565EBC000AFA32 /* ViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A72CB2A565EBC000AFA32 /* ViewA.swift */; };
 		F39A72CE2A565EC6000AFA32 /* ViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A72CD2A565EC6000AFA32 /* ViewB.swift */; };
 		F39A72D02A565ED3000AFA32 /* ViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A72CF2A565ED3000AFA32 /* ViewC.swift */; };
@@ -52,7 +51,6 @@
 		F34566CD2A55A75400C160C6 /* antennaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antennaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F38B56342A57DC200091A6AF /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		F38B56362A57E2B90091A6AF /* MyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCard.swift; sourceTree = "<group>"; };
-		F39A72C92A565A7C000AFA32 /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 		F39A72CB2A565EBC000AFA32 /* ViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewA.swift; sourceTree = "<group>"; };
 		F39A72CD2A565EC6000AFA32 /* ViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewB.swift; sourceTree = "<group>"; };
 		F39A72CF2A565ED3000AFA32 /* ViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewC.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				F39A72D12A565EEE000AFA32 /* View */,
 				F34566B02A55A75100C160C6 /* antennaApp.swift */,
 				F34566B22A55A75100C160C6 /* ContentView.swift */,
-				F39A72C92A565A7C000AFA32 /* MyButtonStyle.swift */,
 				F38B56362A57E2B90091A6AF /* MyCard.swift */,
 				F38B56342A57DC200091A6AF /* MyList.swift */,
 				F34566B42A55A75400C160C6 /* Assets.xcassets */,
@@ -285,7 +282,6 @@
 			files = (
 				F34566B32A55A75100C160C6 /* ContentView.swift in Sources */,
 				F39A72CE2A565EC6000AFA32 /* ViewB.swift in Sources */,
-				F39A72CA2A565A7C000AFA32 /* MyButtonStyle.swift in Sources */,
 				F39A72CC2A565EBC000AFA32 /* ViewA.swift in Sources */,
 				F39A72D02A565ED3000AFA32 /* ViewC.swift in Sources */,
 				F38B56352A57DC200091A6AF /* MyList.swift in Sources */,

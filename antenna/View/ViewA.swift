@@ -10,31 +10,30 @@ import SwiftUI
 struct ViewA: View {
     var body: some View {
         VStack(){
-            
             HStack{
                 Text("안테나")
-                    .frame(width: 94, height: 41)
-                    .fontWeight(.semibold)
+                    .frame(width: 89, height: 41)
+                    .fontWeight(.bold)
                     .font(.system(size:34))
-                    .foregroundColor(Color(red: 0.52, green: 0.52, blue: 0.52))
+                    .foregroundColor(Color(red: 1, green: 0.53, blue: 0.53))
                 Spacer()
             }
-            .padding(.leading, 26)
-            .padding(.top, 93)
+            .padding(.leading, 16)
+            .padding(.top, 101)
             HStack(){
-                Text("즐겨찾는 경로") //26,156
-                    .frame(width: 98, height: 21)
+                Text("즐겨찾는 경로")
+                    .frame(width: 93, height: 20)
                     .fontWeight(.bold)
                     .font(.system(size:17))
-                    .foregroundColor(Color(red: 63/255, green: 63/255, blue: 63/255))
+                    .foregroundColor(Color(red: 0.25, green: 0.25, blue: 0.25))
                 Spacer()
             }
             .padding(.leading, 26)
-            .padding(.top, 63)
-            
+            .padding(.top, 51)
             Spacer()
             
         }
+        Text("HELLO")
     }
 }
 
