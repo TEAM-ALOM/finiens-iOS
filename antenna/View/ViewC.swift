@@ -11,7 +11,6 @@ struct ViewC: View {
     var body: some View {
         ZStack{
             Color.green
-            
             Image(systemName: "line.3.horizontal")
                 .foregroundColor(Color.white)
                 .font(.system(size:100.0))
