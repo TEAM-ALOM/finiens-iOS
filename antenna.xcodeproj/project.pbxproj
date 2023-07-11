@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F32EF9702A5D2FAB0047031C /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EF96F2A5D2FAB0047031C /* Total.swift */; };
 		F34566B12A55A75100C160C6 /* antennaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566B02A55A75100C160C6 /* antennaApp.swift */; };
 		F34566B32A55A75100C160C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566B22A55A75100C160C6 /* ContentView.swift */; };
 		F34566B52A55A75400C160C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34566B42A55A75400C160C6 /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		F34566C22A55A75400C160C6 /* antennaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566C12A55A75400C160C6 /* antennaTests.swift */; };
 		F34566CC2A55A75400C160C6 /* antennaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566CB2A55A75400C160C6 /* antennaUITests.swift */; };
 		F34566CE2A55A75400C160C6 /* antennaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566CD2A55A75400C160C6 /* antennaUITestsLaunchTests.swift */; };
-		F38B56352A57DC200091A6AF /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B56342A57DC200091A6AF /* MyList.swift */; };
 		F38B56372A57E2B90091A6AF /* MyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B56362A57E2B90091A6AF /* MyCard.swift */; };
 		F39A72CC2A565EBC000AFA32 /* ViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A72CB2A565EBC000AFA32 /* ViewA.swift */; };
 		F39A72CE2A565EC6000AFA32 /* ViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A72CD2A565EC6000AFA32 /* ViewB.swift */; };
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F32EF96F2A5D2FAB0047031C /* Total.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		F34566AD2A55A75100C160C6 /* antenna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = antenna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34566B02A55A75100C160C6 /* antennaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antennaApp.swift; sourceTree = "<group>"; };
 		F34566B22A55A75100C160C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		F34566C72A55A75400C160C6 /* antennaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = antennaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34566CB2A55A75400C160C6 /* antennaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antennaUITests.swift; sourceTree = "<group>"; };
 		F34566CD2A55A75400C160C6 /* antennaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antennaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F38B56342A57DC200091A6AF /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		F38B56362A57E2B90091A6AF /* MyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCard.swift; sourceTree = "<group>"; };
 		F39A72CB2A565EBC000AFA32 /* ViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewA.swift; sourceTree = "<group>"; };
 		F39A72CD2A565EC6000AFA32 /* ViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewB.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				F34566B02A55A75100C160C6 /* antennaApp.swift */,
 				F34566B22A55A75100C160C6 /* ContentView.swift */,
 				F38B56362A57E2B90091A6AF /* MyCard.swift */,
-				F38B56342A57DC200091A6AF /* MyList.swift */,
+				F32EF96F2A5D2FAB0047031C /* Total.swift */,
 				F34566B42A55A75400C160C6 /* Assets.xcassets */,
 				F34566B62A55A75400C160C6 /* Preview Content */,
 			);
@@ -282,9 +282,9 @@
 			files = (
 				F34566B32A55A75100C160C6 /* ContentView.swift in Sources */,
 				F39A72CE2A565EC6000AFA32 /* ViewB.swift in Sources */,
+				F32EF9702A5D2FAB0047031C /* Total.swift in Sources */,
 				F39A72CC2A565EBC000AFA32 /* ViewA.swift in Sources */,
 				F39A72D02A565ED3000AFA32 /* ViewC.swift in Sources */,
-				F38B56352A57DC200091A6AF /* MyList.swift in Sources */,
 				F34566B12A55A75100C160C6 /* antennaApp.swift in Sources */,
 				F38B56372A57E2B90091A6AF /* MyCard.swift in Sources */,
 			);
