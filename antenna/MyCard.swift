@@ -5,7 +5,7 @@
 //  Created by 김휘선 on 2023/07/07.
 //
 
-import SwiftUI
+import SwiftUI // 연습
 
 struct MyCard: View{
     var body: some View{
