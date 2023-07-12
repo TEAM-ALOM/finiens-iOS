@@ -93,7 +93,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C9B49F8C2A5EAD4000F8966E /* Design System */ = {
+		C9B49F8C2A5EAD4000F8966E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
 				C9B49F8D2A5EAD5400F8966E /* Colors.swift */,
@@ -102,7 +102,7 @@
 				C9B49F932A5EADDA00F8966E /* Modifiers+Extensions.swift */,
 				C9B49F952A5EAE1500F8966E /* Paddings+Extensions.swift */,
 			);
-			path = "Design System";
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		F34566A42A55A75100C160C6 = {
@@ -128,7 +128,7 @@
 		F34566AF2A55A75100C160C6 /* antenna */ = {
 			isa = PBXGroup;
 			children = (
-				C9B49F8C2A5EAD4000F8966E /* Design System */,
+				C9B49F8C2A5EAD4000F8966E /* DesignSystem */,
 				F39A72D12A565EEE000AFA32 /* View */,
 				F34566B02A55A75100C160C6 /* antennaApp.swift */,
 				F34566B22A55A75100C160C6 /* ContentView.swift */,

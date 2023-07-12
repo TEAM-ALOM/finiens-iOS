@@ -13,7 +13,7 @@ enum ColorPhase: String {
     case quaternary = "quaternary"
 }
 
-enum FiniensColor: String {
+enum AntennaColor: String {
     case backgroundColor = "background-color"
     case shapeColor = "shape-color"
     case keyColor = "key-color"
