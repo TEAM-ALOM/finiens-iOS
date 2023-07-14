@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9B49F8E2A5EAD5400F8966E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F8D2A5EAD5400F8966E /* Colors.swift */; };
+		C9B49F902A5EAD8600F8966E /* Colors+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F8F2A5EAD8600F8966E /* Colors+Extensions.swift */; };
+		C9B49F922A5EADB400F8966E /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F912A5EADB400F8966E /* Modifiers.swift */; };
+		C9B49F942A5EADDA00F8966E /* Modifiers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F932A5EADDA00F8966E /* Modifiers+Extensions.swift */; };
+		C9B49F962A5EAE1500F8966E /* Paddings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F952A5EAE1500F8966E /* Paddings+Extensions.swift */; };
 		F34566B12A55A75100C160C6 /* antennaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566B02A55A75100C160C6 /* antennaApp.swift */; };
 		F34566B32A55A75100C160C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34566B22A55A75100C160C6 /* ContentView.swift */; };
 		F34566B52A55A75400C160C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34566B42A55A75400C160C6 /* Assets.xcassets */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9B49F8D2A5EAD5400F8966E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C9B49F8F2A5EAD8600F8966E /* Colors+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extensions.swift"; sourceTree = "<group>"; };
+		C9B49F912A5EADB400F8966E /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		C9B49F932A5EADDA00F8966E /* Modifiers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modifiers+Extensions.swift"; sourceTree = "<group>"; };
+		C9B49F952A5EAE1500F8966E /* Paddings+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paddings+Extensions.swift"; sourceTree = "<group>"; };
 		F34566AD2A55A75100C160C6 /* antenna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = antenna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34566B02A55A75100C160C6 /* antennaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antennaApp.swift; sourceTree = "<group>"; };
 		F34566B22A55A75100C160C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +93,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9B49F8C2A5EAD4000F8966E /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				C9B49F8D2A5EAD5400F8966E /* Colors.swift */,
+				C9B49F8F2A5EAD8600F8966E /* Colors+Extensions.swift */,
+				C9B49F912A5EADB400F8966E /* Modifiers.swift */,
+				C9B49F932A5EADDA00F8966E /* Modifiers+Extensions.swift */,
+				C9B49F952A5EAE1500F8966E /* Paddings+Extensions.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		F34566A42A55A75100C160C6 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +128,7 @@
 		F34566AF2A55A75100C160C6 /* antenna */ = {
 			isa = PBXGroup;
 			children = (
+				C9B49F8C2A5EAD4000F8966E /* DesignSystem */,
 				F39A72D12A565EEE000AFA32 /* View */,
 				F34566B02A55A75100C160C6 /* antennaApp.swift */,
 				F34566B22A55A75100C160C6 /* ContentView.swift */,
@@ -284,13 +307,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F34566B32A55A75100C160C6 /* ContentView.swift in Sources */,
+				C9B49F922A5EADB400F8966E /* Modifiers.swift in Sources */,
+				C9B49F942A5EADDA00F8966E /* Modifiers+Extensions.swift in Sources */,
+				C9B49F8E2A5EAD5400F8966E /* Colors.swift in Sources */,
 				F39A72CE2A565EC6000AFA32 /* ViewB.swift in Sources */,
 				F39A72CA2A565A7C000AFA32 /* MyButtonStyle.swift in Sources */,
 				F39A72CC2A565EBC000AFA32 /* ViewA.swift in Sources */,
 				F39A72D02A565ED3000AFA32 /* ViewC.swift in Sources */,
+				C9B49F962A5EAE1500F8966E /* Paddings+Extensions.swift in Sources */,
 				F38B56352A57DC200091A6AF /* MyList.swift in Sources */,
 				F34566B12A55A75100C160C6 /* antennaApp.swift in Sources */,
 				F38B56372A57E2B90091A6AF /* MyCard.swift in Sources */,
+				C9B49F902A5EAD8600F8966E /* Colors+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@ import SwiftUI
 struct ViewA: View {
     var body: some View {
         VStack(){
-            
             HStack{
                 Text("안테나")
                     .frame(width: 94, height: 41)
