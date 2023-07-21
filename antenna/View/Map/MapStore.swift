@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct MapStore: ReducerProtocol {
     // State
     struct State: Equatable {
-        var Location: String = ""
+        @BindingState var location: String = ""
     }
     
     // Action
