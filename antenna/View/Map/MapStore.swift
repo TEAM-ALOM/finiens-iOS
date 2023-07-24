@@ -9,33 +9,63 @@ import Foundation
 import ComposableArchitecture
 
 struct MapStore: ReducerProtocol {
-    // State
     struct State: Equatable {
-        @BindingState var location: String = ""
+//        var location: String = "" -> 버튼
+        var departures: String = ""
+        var arrivals: String = ""
+        let stateInstance = CellStore.State(text: "none")
     }
     
     // Action
     enum Action: Equatable {
         case locationSearchBarTapped
+        case departuresBarTapped
+        case arrivalsBarTapped
+        case updownArrowButtonTapped
         case zoomInButtonTapped
         case zoomOutButtonTapped
         case routeSearchButtonTapped
         case myLocationButtonTapped
-        case homeTapped
-        case mapTapped
-        case menuTapped
     }
     
     // Environment
     
     // Reducer
     var body: some ReducerProtocol<State, Action> {
+        
         Reduce { state, action in
             switch action {
             case .locationSearchBarTapped:
-                // 장소 검색 뷰로 전환
+                state.showLocationSearchView = true
+                return .none
+                // 장소 검색 fullScreenCoverView
+                // locationSearchView()
+//                return .fullScreenCover(
+//                    isPresented: Store.binding(
+//                        get: \.showLocationSearchView,
+//                        send: Action.locationSearchViewDismissed
+//                    ),
+//                    content: {
+//                        let locationSearchViewStore = self.store.scope(
+//                            state: { LocationSearchState(showLocationSearchView: $0.showLocationSearchView) }, // LocationSearch(State, View), showLocationSearchview, -Dismissed 필요
+//                            action: Action.LocationSearchView
+//                        )
+//                        LocationSearchView(store: locationSearchViewStore)
+//                    }
+//                )
+                
+            case .departuresBarTapped:
+//                state.departures = stateInstance.text // CellStore.State.text를 끌어오려고 stateInstance를 선언하였음 -> 안 됨..
                 return .none
                 
+            case .arrivalsBarTapped:
+//                state.arrivals = stateInstance.text
+                return .none
+                
+            case .updownArrowButtonTapped:
+                // departures 값과 arrivals 값 교환
+                return .none
+
             case .zoomInButtonTapped:
                 // 화면 확대
                 return .none
@@ -51,18 +81,6 @@ struct MapStore: ReducerProtocol {
                 
             case .myLocationButtonTapped:
                 // 현재 내 위치로 이동
-                return .none
-                
-            case .homeTapped:
-                // 홈 뷰로 전환
-                return .none
-                
-            case .mapTapped:
-                // 현재 뷰 -> 변경사항 없음
-                return .none
-                
-            case .menuTapped:
-                // 메뉴 뷰로 전환
                 return .none
             }
         }

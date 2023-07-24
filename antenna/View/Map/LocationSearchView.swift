@@ -1,20 +1,63 @@
 //
-//  LocationSearchVeiw.swift
+//  LocationSearchView.swift
 //  antenna
 //
 //  Created by 이소리 on 2023/07/24.
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct LocationSearchVeiw: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct LocationSearchState: Equatable {
+    var showLocationSearchView: Bool //false
+}
+
+enum LocationSearchAction: Equatable {
+    case locationSearchBarTapped
+    case locationSearchViewDismissed
+}
+
+let locationSearchReducer = Reducer<LocationSearchState, LocationSearchAction, MapStore> { state, action, environment in
+    switch action {
+    case .locationSearchBarTapped:
+        state.showLocationSearchView = true
+        return .none
+    case .locationSearchViewDismissed:
+        state.showLocationSearchView = false
+        return .none
     }
 }
 
-struct LocationSearchVeiw_Previews: PreviewProvider {
+struct LocationSearchView: View {
+    let store: Store<LocationSearchState, LocationSearchAction>
+
+    var body: some View {
+        WithViewStore(self.store) { viewStore in
+            // UI
+            
+            if viewStore.showLocationSearchView {
+                LocationSearchView(store: self.store.scope(
+                    state: { $0 },
+                    action: LocationSearchAction.locationSearchViewDismissed
+                ))
+                .fullScreenCover(isPresented: viewStore.binding(
+                    get: \.showLocationSearchView,
+                    send: LocationSearchAction.locationSearchViewDismissed))
+            }
+        }
+    }
+}
+
+let initialLocationSearchState = LocationSearchState(showLocationSearchView: true)
+
+let locationSearchStore = Store(
+    initialState: initialLocationSearchState,
+    reducer: locationSearchReducer,
+    environment: MapStore()
+)
+
+struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchVeiw()
+        LocationSearchView(store: locationSearchStore)
     }
 }

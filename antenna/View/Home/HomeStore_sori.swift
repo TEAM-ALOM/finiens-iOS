@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import ComposableArchitecture
+
+//struct HomeStore: ReducerProtocol {
+//    struct State: Equatable {
+//
+//    }
+//}

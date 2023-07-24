@@ -17,20 +17,15 @@ struct MapView: View {
     
     init(store: StoreOf<MapStore>) {
         self.store = store
-        self.viewStore = ViewStore(self.store.scope(state: State.init(state:)))
+        // 초기화 되지 않아 오류가 생김
     }
     
     var body: some View {
         // 장소 검색 바
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {
-//                ForEachStore(self.store.scope(
-//                    state: \.location,
-//                    action: MapStore.Action.textchange(id: action:))) {
-//                        LocationSearchView(store: $0)
-//                    }
                 Button {
-//                    viewStore.send(.searchingLocationView)
+                    // 장소 검색 바
                 } label: {
                     Text("장소 검색")
                     Spacer()
@@ -38,7 +33,6 @@ struct MapView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                 }
-                // fullScreenCover or SearchingLocationView
 
                 .cornerRadius(10)
                 .foregroundColor(.gray)
@@ -81,18 +75,18 @@ struct MapView: View {
     }
 }
 
-struct LocationSearchView: View {
-    @State private var searchText: String = ""
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("\(searchText)")
-            }
-            .searchable(text: $searchText, prompt: "장소 검색")
-        }
-    }
-}
+//struct LocationSearchView: View {
+//    @State private var searchText: String = ""
+//    
+//    var body: some View {
+//        NavigationView {
+//            VStack {
+//                Text("\(searchText)")
+//            }
+//            .searchable(text: $searchText, prompt: "장소 검색")
+//        }
+//    }
+//}
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
