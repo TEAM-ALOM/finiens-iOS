@@ -6,20 +6,20 @@
 //
 import SwiftUI
 
-struct Test: View {
+struct DottedLine: View {
     var body: some View {
         Path { path in
                    path.move(to: CGPoint(x: 0, y: 0)) // 시작점
                    path.addLine(to: CGPoint(x: 0, y: 15)) // 끝점
                }
-               .stroke(style: StrokeStyle(lineWidth: 1, dash: [5])) // 점선 스타일
-               .foregroundColor(.black) // 점선 색상
+               .stroke(style: StrokeStyle(lineWidth: 1, dash: [1])) // 점선 스타일
+               .foregroundColor(Color(red: 0.36, green: 0.36, blue: 0.36)) // 점선 색상
     }
 }
 
-struct Test_Previews: PreviewProvider {
+struct DottedLine_Previews: PreviewProvider {
     static var previews: some View {
-        Test()
+        DottedLine()
     }
 }
 

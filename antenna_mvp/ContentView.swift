@@ -5,17 +5,28 @@
 //  Created by 김휘선 on 2023/07/17.
 //
 
-import SwiftUI
+import SwiftUI  // tab 부분에서 글자 폰트랑 크기 조절하기
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView{
+            ViewA()
+                .tabItem(){
+                    Image(systemName: "house.fill")
+                    Text("홈")
+                }
+            ViewB()
+                .tabItem(){
+                    Image(systemName: "map.fill")
+                    Text("지도")
+                    }
+            ViewC()
+                .tabItem(){
+                    Image(systemName: "line.3.horizontal")
+                    Text("메뉴")
+                    }
         }
-        .padding()
+        .accentColor(Color(red: 1, green: 0.53, blue: 0.53))
     }
 }
 
@@ -24,3 +35,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

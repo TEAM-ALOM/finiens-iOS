@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F32B6B2B2A6B97670084CF45 /* PartialCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B6B2A2A6B97670084CF45 /* PartialCornerRadius.swift */; };
+		F32B6B2D2A6BB17D0084CF45 /* ViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B6B2C2A6BB17D0084CF45 /* ViewA.swift */; };
+		F32B6B2F2A6BB1990084CF45 /* ViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B6B2E2A6BB1990084CF45 /* ViewB.swift */; };
+		F32B6B312A6BB1A00084CF45 /* ViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B6B302A6BB1A00084CF45 /* ViewC.swift */; };
+		F3887C482A6C191A000EB726 /* Finding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3887C472A6C191A000EB726 /* Finding.swift */; };
 		F39FC69E2A65883300C977F7 /* antenna_mvpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC69D2A65883300C977F7 /* antenna_mvpApp.swift */; };
 		F39FC6A02A65883300C977F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC69F2A65883300C977F7 /* ContentView.swift */; };
 		F39FC6A22A65883800C977F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39FC6A12A65883800C977F7 /* Assets.xcassets */; };
@@ -14,6 +19,7 @@
 		F39FC6AF2A65883900C977F7 /* antenna_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC6AE2A65883900C977F7 /* antenna_mvpTests.swift */; };
 		F39FC6B92A65883900C977F7 /* antenna_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC6B82A65883900C977F7 /* antenna_mvpUITests.swift */; };
 		F39FC6BB2A65883900C977F7 /* antenna_mvpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC6BA2A65883900C977F7 /* antenna_mvpUITestsLaunchTests.swift */; };
+		F3DFD9042A67D28500A8721F /* DottedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFD9032A67D28500A8721F /* DottedLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F32B6B2A2A6B97670084CF45 /* PartialCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialCornerRadius.swift; sourceTree = "<group>"; };
+		F32B6B2C2A6BB17D0084CF45 /* ViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewA.swift; sourceTree = "<group>"; };
+		F32B6B2E2A6BB1990084CF45 /* ViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewB.swift; sourceTree = "<group>"; };
+		F32B6B302A6BB1A00084CF45 /* ViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewC.swift; sourceTree = "<group>"; };
+		F3887C472A6C191A000EB726 /* Finding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finding.swift; sourceTree = "<group>"; };
 		F39FC69A2A65883300C977F7 /* antenna_mvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = antenna_mvp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FC69D2A65883300C977F7 /* antenna_mvpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antenna_mvpApp.swift; sourceTree = "<group>"; };
 		F39FC69F2A65883300C977F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +55,7 @@
 		F39FC6B42A65883900C977F7 /* antenna_mvpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = antenna_mvpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FC6B82A65883900C977F7 /* antenna_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antenna_mvpUITests.swift; sourceTree = "<group>"; };
 		F39FC6BA2A65883900C977F7 /* antenna_mvpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antenna_mvpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3DFD9032A67D28500A8721F /* DottedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,12 @@
 			children = (
 				F39FC69D2A65883300C977F7 /* antenna_mvpApp.swift */,
 				F39FC69F2A65883300C977F7 /* ContentView.swift */,
+				F32B6B2A2A6B97670084CF45 /* PartialCornerRadius.swift */,
+				F3887C472A6C191A000EB726 /* Finding.swift */,
+				F32B6B2C2A6BB17D0084CF45 /* ViewA.swift */,
+				F32B6B2E2A6BB1990084CF45 /* ViewB.swift */,
+				F32B6B302A6BB1A00084CF45 /* ViewC.swift */,
+				F3DFD9032A67D28500A8721F /* DottedLine.swift */,
 				F39FC6A12A65883800C977F7 /* Assets.xcassets */,
 				F39FC6A32A65883800C977F7 /* Preview Content */,
 			);
@@ -257,8 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32B6B2D2A6BB17D0084CF45 /* ViewA.swift in Sources */,
+				F32B6B2F2A6BB1990084CF45 /* ViewB.swift in Sources */,
 				F39FC6A02A65883300C977F7 /* ContentView.swift in Sources */,
 				F39FC69E2A65883300C977F7 /* antenna_mvpApp.swift in Sources */,
+				F32B6B2B2A6B97670084CF45 /* PartialCornerRadius.swift in Sources */,
+				F32B6B312A6BB1A00084CF45 /* ViewC.swift in Sources */,
+				F3DFD9042A67D28500A8721F /* DottedLine.swift in Sources */,
+				F3887C482A6C191A000EB726 /* Finding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
