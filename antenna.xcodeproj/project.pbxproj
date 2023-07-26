@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930E2D722A6121A5007BEAD8 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 930E2D712A6121A5007BEAD8 /* ComposableArchitecture */; };
+		930E2D772A612245007BEAD8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D762A612245007BEAD8 /* MapView.swift */; };
+		930E2D792A612289007BEAD8 /* MapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D782A612289007BEAD8 /* MapStore.swift */; };
+		930E2D7C2A6A4234007BEAD8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D7B2A6A4234007BEAD8 /* RootView.swift */; };
+		930E2D7E2A6A83E6007BEAD8 /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D7D2A6A83E6007BEAD8 /* RootStore.swift */; };
+		930E2D822A6A8939007BEAD8 /* HomeView_sori.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D812A6A8939007BEAD8 /* HomeView_sori.swift */; };
+		930E2D842A6A8947007BEAD8 /* HomeStore_sori.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D832A6A8947007BEAD8 /* HomeStore_sori.swift */; };
+		930E2D872A6CFDB2007BEAD8 /* CellStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D862A6CFDB2007BEAD8 /* CellStore.swift */; };
+		930E2D8D2A6E5D7D007BEAD8 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E2D8C2A6E5D7D007BEAD8 /* LocationSearchView.swift */; };
 		C9B49F8E2A5EAD5400F8966E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F8D2A5EAD5400F8966E /* Colors.swift */; };
 		C9B49F902A5EAD8600F8966E /* Colors+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F8F2A5EAD8600F8966E /* Colors+Extensions.swift */; };
 		C9B49F922A5EADB400F8966E /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B49F912A5EADB400F8966E /* Modifiers.swift */; };
@@ -45,6 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930E2D762A612245007BEAD8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		930E2D782A612289007BEAD8 /* MapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStore.swift; sourceTree = "<group>"; };
+		930E2D7B2A6A4234007BEAD8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		930E2D7D2A6A83E6007BEAD8 /* RootStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStore.swift; sourceTree = "<group>"; };
+		930E2D812A6A8939007BEAD8 /* HomeView_sori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_sori.swift; sourceTree = "<group>"; };
+		930E2D832A6A8947007BEAD8 /* HomeStore_sori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore_sori.swift; sourceTree = "<group>"; };
+		930E2D862A6CFDB2007BEAD8 /* CellStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellStore.swift; sourceTree = "<group>"; };
+		930E2D8C2A6E5D7D007BEAD8 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		C9B49F8D2A5EAD5400F8966E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C9B49F8F2A5EAD8600F8966E /* Colors+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extensions.swift"; sourceTree = "<group>"; };
 		C9B49F912A5EADB400F8966E /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -73,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930E2D722A6121A5007BEAD8 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +111,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930E2D732A612217007BEAD8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				930E2D852A6CFD80007BEAD8 /* Cell */,
+				930E2D762A612245007BEAD8 /* MapView.swift */,
+				930E2D782A612289007BEAD8 /* MapStore.swift */,
+				930E2D8C2A6E5D7D007BEAD8 /* LocationSearchView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		930E2D7A2A6A4112007BEAD8 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				930E2D7B2A6A4234007BEAD8 /* RootView.swift */,
+				930E2D7D2A6A83E6007BEAD8 /* RootStore.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		930E2D802A6A88F4007BEAD8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				930E2D812A6A8939007BEAD8 /* HomeView_sori.swift */,
+				930E2D832A6A8947007BEAD8 /* HomeStore_sori.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		930E2D852A6CFD80007BEAD8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				930E2D862A6CFDB2007BEAD8 /* CellStore.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		930E2D882A6D0F66007BEAD8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		C9B49F8C2A5EAD4000F8966E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +231,10 @@
 		F39A72D12A565EEE000AFA32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				930E2D7A2A6A4112007BEAD8 /* Root */,
+				930E2D802A6A88F4007BEAD8 /* Home */,
+				930E2D732A612217007BEAD8 /* Map */,
+				930E2D882A6D0F66007BEAD8 /* Menu */,
 				F39A72CF2A565ED3000AFA32 /* ViewC.swift */,
 				F39A72CD2A565EC6000AFA32 /* ViewB.swift */,
 				F39A72CB2A565EBC000AFA32 /* ViewA.swift */,
@@ -192,6 +258,9 @@
 			dependencies = (
 			);
 			name = antenna;
+			packageProductDependencies = (
+				930E2D712A6121A5007BEAD8 /* ComposableArchitecture */,
+			);
 			productName = antenna;
 			productReference = F34566AD2A55A75100C160C6 /* antenna.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +333,9 @@
 				Base,
 			);
 			mainGroup = F34566A42A55A75100C160C6;
+			packageReferences = (
+				930E2D702A6121A4007BEAD8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = F34566AE2A55A75100C160C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,13 +380,21 @@
 			files = (
 				F34566B32A55A75100C160C6 /* ContentView.swift in Sources */,
 				C9B49F922A5EADB400F8966E /* Modifiers.swift in Sources */,
+				930E2D842A6A8947007BEAD8 /* HomeStore_sori.swift in Sources */,
+				930E2D7E2A6A83E6007BEAD8 /* RootStore.swift in Sources */,
 				C9B49F942A5EADDA00F8966E /* Modifiers+Extensions.swift in Sources */,
 				C9B49F8E2A5EAD5400F8966E /* Colors.swift in Sources */,
 				F39A72CE2A565EC6000AFA32 /* ViewB.swift in Sources */,
 				F39A72CA2A565A7C000AFA32 /* MyButtonStyle.swift in Sources */,
+				930E2D772A612245007BEAD8 /* MapView.swift in Sources */,
 				F39A72CC2A565EBC000AFA32 /* ViewA.swift in Sources */,
+				930E2D7C2A6A4234007BEAD8 /* RootView.swift in Sources */,
+				930E2D872A6CFDB2007BEAD8 /* CellStore.swift in Sources */,
 				F39A72D02A565ED3000AFA32 /* ViewC.swift in Sources */,
+				930E2D792A612289007BEAD8 /* MapStore.swift in Sources */,
+				930E2D822A6A8939007BEAD8 /* HomeView_sori.swift in Sources */,
 				C9B49F962A5EAE1500F8966E /* Paddings+Extensions.swift in Sources */,
+				930E2D8D2A6E5D7D007BEAD8 /* LocationSearchView.swift in Sources */,
 				F38B56352A57DC200091A6AF /* MyList.swift in Sources */,
 				F34566B12A55A75100C160C6 /* antennaApp.swift in Sources */,
 				F38B56372A57E2B90091A6AF /* MyCard.swift in Sources */,
@@ -637,6 +717,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		930E2D702A6121A4007BEAD8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		930E2D712A6121A5007BEAD8 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 930E2D702A6121A4007BEAD8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F34566A52A55A75100C160C6 /* Project object */;
 }
