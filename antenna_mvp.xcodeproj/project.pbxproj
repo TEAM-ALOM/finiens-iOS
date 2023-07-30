@@ -14,6 +14,11 @@
 		F39FC6AF2A65883900C977F7 /* antenna_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC6AE2A65883900C977F7 /* antenna_mvpTests.swift */; };
 		F39FC6B92A65883900C977F7 /* antenna_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC6B82A65883900C977F7 /* antenna_mvpUITests.swift */; };
 		F39FC6BB2A65883900C977F7 /* antenna_mvpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FC6BA2A65883900C977F7 /* antenna_mvpUITestsLaunchTests.swift */; };
+		F3A3775A2A74D22F00670B5D /* Finding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A377592A74D22E00670B5D /* Finding.swift */; };
+		F3A3775C2A74D25E00670B5D /* PartialCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3775B2A74D25E00670B5D /* PartialCornerRadius.swift */; };
+		F3A3775E2A74D27800670B5D /* ViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3775D2A74D27800670B5D /* ViewA.swift */; };
+		F3A377602A74D28000670B5D /* ViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3775F2A74D28000670B5D /* ViewB.swift */; };
+		F3A377622A74D28800670B5D /* ViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A377612A74D28800670B5D /* ViewC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		F39FC6B42A65883900C977F7 /* antenna_mvpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = antenna_mvpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FC6B82A65883900C977F7 /* antenna_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antenna_mvpUITests.swift; sourceTree = "<group>"; };
 		F39FC6BA2A65883900C977F7 /* antenna_mvpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = antenna_mvpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3A377592A74D22E00670B5D /* Finding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finding.swift; sourceTree = "<group>"; };
+		F3A3775B2A74D25E00670B5D /* PartialCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialCornerRadius.swift; sourceTree = "<group>"; };
+		F3A3775D2A74D27800670B5D /* ViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewA.swift; sourceTree = "<group>"; };
+		F3A3775F2A74D28000670B5D /* ViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewB.swift; sourceTree = "<group>"; };
+		F3A377612A74D28800670B5D /* ViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,11 @@
 			children = (
 				F39FC69D2A65883300C977F7 /* antenna_mvpApp.swift */,
 				F39FC69F2A65883300C977F7 /* ContentView.swift */,
+				F3A377592A74D22E00670B5D /* Finding.swift */,
+				F3A3775B2A74D25E00670B5D /* PartialCornerRadius.swift */,
+				F3A3775D2A74D27800670B5D /* ViewA.swift */,
+				F3A3775F2A74D28000670B5D /* ViewB.swift */,
+				F3A377612A74D28800670B5D /* ViewC.swift */,
 				F39FC6A12A65883800C977F7 /* Assets.xcassets */,
 				F39FC6A32A65883800C977F7 /* Preview Content */,
 			);
@@ -257,7 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A3775E2A74D27800670B5D /* ViewA.swift in Sources */,
+				F3A377602A74D28000670B5D /* ViewB.swift in Sources */,
 				F39FC6A02A65883300C977F7 /* ContentView.swift in Sources */,
+				F3A3775A2A74D22F00670B5D /* Finding.swift in Sources */,
+				F3A3775C2A74D25E00670B5D /* PartialCornerRadius.swift in Sources */,
+				F3A377622A74D28800670B5D /* ViewC.swift in Sources */,
 				F39FC69E2A65883300C977F7 /* antenna_mvpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
