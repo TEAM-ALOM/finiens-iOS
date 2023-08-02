@@ -118,7 +118,5 @@ xcuserdata
 XCConfig/
 Tuist/Dependencies
 Derived/
-*.xcworkspace
-*.xcodeproj
 *.p12
 master.key
