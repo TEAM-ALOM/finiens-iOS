@@ -1,28 +1,30 @@
 //
-//  SearchMapStore.swift
+//  LocationSearchStore.swift
 //  Finiens
 //
-//  Created by 송영모 on 2023/07/26.
+//  Created by 이소리 on 2023/08/03.
 //
 
 import ComposableArchitecture
 
-struct SearchMapStore: ReducerProtocol {
+struct LocationSearchStore: ReducerProtocol {
     struct State: Equatable {
-        var isShowingLocationSearchView: Bool = false
+        var address: String = ""
     }
     
     enum Action: Equatable {
-        case isTappedLocationSearchBar
+        case updateAddress(String)
     }
     
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
-            case .isTappedLocationSearchBar:
-                state.isShowingLocationSearchView.toggle()
+            case .updateAddress(address):
+                state.address =  address
                 return .none
             }
         }
     }
 }
+
+
