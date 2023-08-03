@@ -25,6 +25,7 @@
 		702BB3C52A7167F900610C65 /* SearchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BB3C42A7167F900610C65 /* SearchMapView.swift */; };
 		702BB3C72A716CAE00610C65 /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BB3C62A716CAE00610C65 /* RootStore.swift */; };
 		702BB3C92A716D4F00610C65 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BB3C82A716D4F00610C65 /* RootView.swift */; };
+		93524B132A7B3DD100BF3F53 /* NMapsMap in Frameworks */ = {isa = PBXBuildFile; productRef = 93524B122A7B3DD100BF3F53 /* NMapsMap */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				702BB3A72A71644100610C65 /* ComposableArchitecture in Frameworks */,
+				93524B132A7B3DD100BF3F53 /* NMapsMap in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +251,7 @@
 			name = Finiens;
 			packageProductDependencies = (
 				702BB3A62A71644100610C65 /* ComposableArchitecture */,
+				93524B122A7B3DD100BF3F53 /* NMapsMap */,
 			);
 			productName = Finiens;
 			productReference = 702BB3742A7163F900610C65 /* Finiens.app */;
@@ -324,6 +327,7 @@
 			mainGroup = 702BB36B2A7163F900610C65;
 			packageReferences = (
 				702BB3A52A71644100610C65 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				93524B112A7B3DD100BF3F53 /* XCRemoteSwiftPackageReference "NMapsMap" */,
 			);
 			productRefGroup = 702BB3752A7163F900610C65 /* Products */;
 			projectDirPath = "";
@@ -713,6 +717,14 @@
 				minimumVersion = 0.56.0;
 			};
 		};
+		93524B112A7B3DD100BF3F53 /* XCRemoteSwiftPackageReference "NMapsMap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jaemyeong/NMapsMap.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -720,6 +732,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 702BB3A52A71644100610C65 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		93524B122A7B3DD100BF3F53 /* NMapsMap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93524B112A7B3DD100BF3F53 /* XCRemoteSwiftPackageReference "NMapsMap" */;
+			productName = NMapsMap;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

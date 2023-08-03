@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "nmapsmap",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jaemyeong/NMapsMap.git",
+      "state" : {
+        "revision" : "f9850a18d73f9438c622e308623b77709e3cd00a",
+        "version" : "3.16.2"
+      }
+    },
+    {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",
