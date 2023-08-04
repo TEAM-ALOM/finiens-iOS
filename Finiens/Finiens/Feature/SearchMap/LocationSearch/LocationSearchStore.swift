@@ -19,8 +19,8 @@ struct LocationSearchStore: ReducerProtocol {
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
-            case .updateAddress(address):
-                state.address =  address
+            case let .updateAddress(address):
+                state.address = address
                 return .none
             }
         }

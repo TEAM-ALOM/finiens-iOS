@@ -41,7 +41,8 @@ struct SearchMapView: View {
                     .background(Color(.white))
                     .cornerRadius(8)
                     .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
-                        LocationSearchView(store: store.scope(state: { $0.address }, action: { .updateAddress($0) }))
+                        
+                        LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                         // 총 네 가지 오류입니다
                         
                         // 두 번째 store - Argument passed to call that takes no arguments
@@ -126,34 +127,6 @@ struct UIMapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: NMFNaverMapView, context: Context) {}
 }
-
-struct LocationSearchView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State var address: String = ""
-    
-    var body: some View {
-        VStack {
-            NavigationView {
-                VStack {
-                    SearchBar(address: $address)
-                }
-                    .navigationBarTitle("장소 검색")
-                    .toolbar {
-                        ToolbarItem {
-                            Button(action: {
-                                presentationMode.wrappedValue.dismiss()
-                            }) {
-                                Text("닫기")
-                                    .foregroundColor(Color(.red))
-                            }
-                        }
-                    }
-            }
-        }
-        .padding()
-    }
-}
-
 
 struct SearchMapView_Previews: PreviewProvider {
     static var previews: some View {

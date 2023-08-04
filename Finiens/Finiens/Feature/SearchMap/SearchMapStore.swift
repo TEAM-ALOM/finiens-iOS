@@ -10,10 +10,14 @@ import ComposableArchitecture
 struct SearchMapStore: ReducerProtocol {
     struct State: Equatable {
         var isShowingLocationSearchView: Bool = false
+        
+        var locationSearch: LocationSearchStore.State = .init()
     }
     
     enum Action: Equatable {
         case isTappedLocationSearchBar
+        
+        case locationSearch(LocationSearchStore.Action)
     }
     
     var body: some ReducerProtocol<State, Action> {
@@ -21,6 +25,9 @@ struct SearchMapStore: ReducerProtocol {
             switch action {
             case .isTappedLocationSearchBar:
                 state.isShowingLocationSearchView.toggle()
+                return .none
+                
+            default:
                 return .none
             }
         }
