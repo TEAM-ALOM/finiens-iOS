@@ -9,21 +9,29 @@ import SwiftUI
 import ComposableArchitecture
 import NMapsMap
 
+struct NaverMapUIView: UIViewRepresentable {
+    func makeUIView(context: Context) -> NMFMapView {
+        return NMFMapView(frame: .zero)
+    }
+
+    func updateUIView(_ uiView: NMFMapView, context: Context) {
+        let center = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
+        uiView.moveCamera(NMFCameraUpdate(scrollTo: center))
+    }
+}
+
 struct SearchMapView: View {
     let store: StoreOf<SearchMapStore>
-    
-    let mapView = NMFMapView()
-    
+
     var body: some View {
-        @State var region: (Double, Double) = (37.55037, 127.07435)
-        
         @State var isShowingLocationSearchView: Bool = false
+        @State var region = NMFCameraPosition(NMGLatLng(lat: 37.54330366, lng: 127.04455548), zoom: 15, tilt: 0, heading: 0)
 
 
         WithViewStore(store) { viewStore in
             ZStack {
-                UIMapView()
-                    .edgesIgnoringSafeArea(.vertical)
+                NaverMapUIView()
+                    .edgesIgnoringSafeArea(.top)
 
                 VStack {
                     HStack {
@@ -43,15 +51,6 @@ struct SearchMapView: View {
                     .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
                         
                         LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
-                        // 총 네 가지 오류입니다
-                        
-                        // 두 번째 store - Argument passed to call that takes no arguments
-                        // scope - Generic parameter 'ChildAction' could not be inferred
-                        // address - Type 'SearchMapStore.Action' has no member 'updateAddress' -> SearchMapStore을 LocationSearchStore로 바꾸자니 따라붙은 isTappedLocationSearchBar 때문에 어느 것을 수정해야 할지 모르겠어요..
-                        // updateAddress($0) - Value of type 'SearchMapStore.State' has no member 'address' -> 위와 같습니다
-                        
-                        // searchMapStore - isShowingLocationSearchView, isTappedLocationSearchBar 포함
-                        // LocationSearchStore - address, updateAddress 포함
                     }
                     Spacer()
                     
@@ -81,6 +80,8 @@ struct SearchMapView: View {
                             .background(Color.white)
                             .clipShape(Circle())
                         }
+                        .padding(.vertical, 5.0)
+
                         HStack {
                             Button(action: {
                                 print("지도 화면 축소")
@@ -106,10 +107,13 @@ struct SearchMapView: View {
                             .background(Color.white)
                             .clipShape(Circle())
                         }
+                        .padding(.vertical, 5.0)
+
                     }
+                    .padding(.vertical)
+
                 }
                 .padding()
-            .background(Color(.black))
             }
         }
     }
