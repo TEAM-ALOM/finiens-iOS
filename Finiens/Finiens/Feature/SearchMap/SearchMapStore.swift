@@ -10,7 +10,7 @@ import ComposableArchitecture
 struct SearchMapStore: ReducerProtocol {
     struct State: Equatable {
         var isShowingLocationSearchView: Bool = false
-        var isDefectedArrowVisible: Bool = true
+        var isDefectedArrowButtonVisible: Bool = true
         
         var locationSearch: LocationSearchStore.State = .init()
     }
@@ -29,7 +29,7 @@ struct SearchMapStore: ReducerProtocol {
                 return .none
                 
             case .isTappedDefectedArrowButton:
-                state.isDefectedArrowVisible.toggle()
+                state.isDefectedArrowButtonVisible.toggle()
                 return .none
                 
             default:

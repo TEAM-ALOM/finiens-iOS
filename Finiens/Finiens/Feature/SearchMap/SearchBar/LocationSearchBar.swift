@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchBar: View {
+struct LocationSearchBar: View {
     
     @Binding var address: String
 

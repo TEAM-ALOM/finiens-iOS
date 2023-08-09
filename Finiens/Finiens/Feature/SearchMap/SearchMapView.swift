@@ -27,8 +27,8 @@ struct SearchMapView: View {
     let store: StoreOf<SearchMapStore>
 
     var body: some View {
-        @State var arrival: String = ""
         @State var departure: String = ""
+        @State var arrival: String = ""
 
         @State var region = NMFCameraPosition(NMGLatLng(lat: 37.54330366, lng: 127.04455548), zoom: 15, tilt: 0, heading: 0)
 
@@ -38,23 +38,48 @@ struct SearchMapView: View {
                     .edgesIgnoringSafeArea(.top)
 
                 VStack {
-                    HStack {
-                        Button(action: {
-                            viewStore.send(.isTappedLocationSearchBar)
-                        }) {
-                            Text("장소 검색")
-                                .foregroundColor(Color(.gray))
+                    VStack {
+                        // 장소 검색 바
+                        if viewStore.isDefectedArrowButtonVisible {
+                            HStack {
+                                Button(action: {
+                                    viewStore.send(.isTappedDefectedArrowButton)
+                                }) {
+                                    Text("장소 검색")
+                                        .foregroundColor(Color(.gray))
+                                }
+                                Spacer()
+                                Image(systemName: "magnifyingglass")
+                            }
+                            .padding()
+                            .frame(width: 353, height: 34)
+                            .background(Color(.white))
+                            .cornerRadius(8)
+                            .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
+                                
+                                LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
+                            }
                         }
-                        Spacer()
-                        Image(systemName: "magnifyingglass")
-                    }
-                    .padding()
-                    .frame(width: 353, height: 34)
-                    .background(Color(.white))
-                    .cornerRadius(8)
-                    .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
-                        
-                        LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
+                        //출발지-도착지 입력 바
+                        else {
+                            HStack {
+                                VStack {
+                                    DepartureSearchBar(departure: $departure)
+
+                                    ArrivalSearchBar(arrival: $arrival)
+                                }
+                                Button(action: {
+                                    // 출발지 도착지 바뀌는 액션
+                                }) {
+                                    Image(systemName: "arrow.up.arrow.down")
+                                        .foregroundColor(Color(.gray))
+                                }
+                            }
+                            .padding()
+                            .frame(width: 353, height: 104)
+                            .background(Color(.white))
+                            .cornerRadius(20)
+                        }
                     }
                     Spacer()
                     
@@ -74,7 +99,7 @@ struct SearchMapView: View {
                             Spacer()
                             
                             VStack {
-                                if viewStore.isDefectedArrowVisible {
+                                if viewStore.isDefectedArrowButtonVisible {
                                     Button(action: {
                                         viewStore.send(.isTappedDefectedArrowButton)
                                     }) {
