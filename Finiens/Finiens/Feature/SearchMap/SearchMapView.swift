@@ -8,15 +8,18 @@
 import SwiftUI
 import ComposableArchitecture
 import NMapsMap
+import CoreLocation // 현재 위치 가져오기 위한 모듈
 
+// 지도 뷰 띄우는 코드 -> 격자로 표시됨
 struct NaverMapUIView: UIViewRepresentable {
-    func makeUIView(context: Context) -> NMFMapView {
-        return NMFMapView(frame: .zero)
-    }
-
+    let centerLatLng = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
+        
     func updateUIView(_ uiView: NMFMapView, context: Context) {
-        let center = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
-        uiView.moveCamera(NMFCameraUpdate(scrollTo: center))
+        uiView.moveCamera(NMFCameraUpdate(scrollTo: centerLatLng))
+    }
+    
+    func makeUIView(context: Context) -> NMFMapView {
+        return NMFMapView(frame: UIScreen.main.bounds)
     }
 }
 
@@ -24,9 +27,10 @@ struct SearchMapView: View {
     let store: StoreOf<SearchMapStore>
 
     var body: some View {
-        @State var isShowingLocationSearchView: Bool = false
-        @State var region = NMFCameraPosition(NMGLatLng(lat: 37.54330366, lng: 127.04455548), zoom: 15, tilt: 0, heading: 0)
+        @State var arrival: String = ""
+        @State var departure: String = ""
 
+        @State var region = NMFCameraPosition(NMGLatLng(lat: 37.54330366, lng: 127.04455548), zoom: 15, tilt: 0, heading: 0)
 
         WithViewStore(store) { viewStore in
             ZStack {
@@ -69,13 +73,25 @@ struct SearchMapView: View {
                             
                             Spacer()
                             
-                            Button(action: {
-                                print("길찾기")
-                            }, label: {
-                                Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                            })
+                            VStack {
+                                if viewStore.isDefectedArrowVisible {
+                                    Button(action: {
+                                        viewStore.send(.isTappedDefectedArrowButton)
+                                    }) {
+                                        Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
+                                            .resizable()
+                                            .frame(width: 40, height: 40)
+                                    }
+                                } else {
+                                    Button(action: {
+                                        viewStore.send(.isTappedDefectedArrowButton)
+                                    }) {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .resizable()
+                                            .frame(width: 40, height: 40)
+                                    }
+                                }
+                            }
                             .foregroundColor(Color(.red))
                             .background(Color.white)
                             .clipShape(Circle())
