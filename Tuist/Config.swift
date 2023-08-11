@@ -2,6 +2,6 @@ import ProjectDescription
 
 let config = Config(
     plugins: [
-        .local(path: .relativeToManifest("../../Plugins/FiniesNew")),
+        .local(path: .relativeToManifest("../../Plugins/Finiens")),
     ]
 )
