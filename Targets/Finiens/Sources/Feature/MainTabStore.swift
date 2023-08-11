@@ -20,7 +20,7 @@ struct MainTabViewStore: Reducer {
     struct State: Equatable {
         var currentScene: MainScene = .home
         
-        var home: HomeStore.State = .init()
+        var home: HomeNavigationStackStore.State = .init()
         var searchMap: SearchMapStore.State = .init()
         var menu: MenuStore.State = .init()
     }
@@ -30,7 +30,7 @@ struct MainTabViewStore: Reducer {
         
         case selectTab(MainScene)
         
-        case home(HomeStore.Action)
+        case home(HomeNavigationStackStore.Action)
         case searchMap(SearchMapStore.Action)
         case menu(MenuStore.Action)
     }
@@ -45,7 +45,7 @@ struct MainTabViewStore: Reducer {
         }
         
         Scope(state: \.home, action: /Action.home) {
-            HomeStore()._printChanges()
+            HomeNavigationStackStore()._printChanges()
         }
         
         Scope(state: \.searchMap, action: /Action.searchMap) {

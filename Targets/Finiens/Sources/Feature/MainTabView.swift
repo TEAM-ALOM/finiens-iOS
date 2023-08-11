@@ -15,7 +15,7 @@ struct MainTabView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             TabView {
-                HomeView(store: self.store.scope(state: \.home, action: { .home($0) }))
+                HomeNavigationStackView(store: self.store.scope(state: \.home, action: { .home($0) }))
                     .tabItem {
                       Image(systemName: "house.fill")
                       Text("홈")
