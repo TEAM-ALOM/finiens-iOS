@@ -24,7 +24,7 @@ struct LocationSearchView: View {
             VStack {
                 NavigationView {
                     VStack {
-                        SearchBar(address: $address)
+                        LocationSearchBar(address: $address)
                     }
                         .navigationBarTitle("장소 검색")
                         .toolbar {

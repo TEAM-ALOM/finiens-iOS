@@ -10,13 +10,14 @@ import ComposableArchitecture
 struct SearchMapStore: ReducerProtocol {
     struct State: Equatable {
         var isShowingLocationSearchView: Bool = false
+        var isDefectedArrowButtonVisible: Bool = true
         
         var locationSearch: LocationSearchStore.State = .init()
     }
     
     enum Action: Equatable {
         case isTappedLocationSearchBar
-        
+        case isTappedDefectedArrowButton
         case locationSearch(LocationSearchStore.Action)
     }
     
@@ -25,6 +26,10 @@ struct SearchMapStore: ReducerProtocol {
             switch action {
             case .isTappedLocationSearchBar:
                 state.isShowingLocationSearchView.toggle()
+                return .none
+                
+            case .isTappedDefectedArrowButton:
+                state.isDefectedArrowButtonVisible.toggle()
                 return .none
                 
             default:

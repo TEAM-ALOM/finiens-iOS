@@ -26,9 +26,16 @@
 		702BB3C72A716CAE00610C65 /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BB3C62A716CAE00610C65 /* RootStore.swift */; };
 		702BB3C92A716D4F00610C65 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BB3C82A716D4F00610C65 /* RootView.swift */; };
 		70AB913B2A7CBF7B00ECE03C /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB913A2A7CBF7B00ECE03C /* LocationSearchView.swift */; };
+		931C41592A816868005C1AEF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C41582A816868005C1AEF /* Colors.swift */; };
+		931C415B2A816881005C1AEF /* Colors+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C415A2A816881005C1AEF /* Colors+Extensions.swift */; };
+		931C415D2A816899005C1AEF /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C415C2A816899005C1AEF /* Modifiers.swift */; };
+		931C415F2A8168A9005C1AEF /* Modifiers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C415E2A8168A9005C1AEF /* Modifiers+Extensions.swift */; };
+		931C41612A8168BA005C1AEF /* Paddings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C41602A8168BA005C1AEF /* Paddings+Extensions.swift */; };
+		931C41642A833315005C1AEF /* DepartureSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C41632A833315005C1AEF /* DepartureSearchBar.swift */; };
+		931C41662A833330005C1AEF /* ArrivalSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C41652A833330005C1AEF /* ArrivalSearchBar.swift */; };
 		93524B132A7B3DD100BF3F53 /* NMapsMap in Frameworks */ = {isa = PBXBuildFile; productRef = 93524B122A7B3DD100BF3F53 /* NMapsMap */; };
 		93524B342A7B8CD100BF3F53 /* LocationSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93524B332A7B8CD100BF3F53 /* LocationSearchStore.swift */; };
-		93524B362A7BFE7E00BF3F53 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93524B352A7BFE7E00BF3F53 /* SearchBar.swift */; };
+		93524B362A7BFE7E00BF3F53 /* LocationSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93524B352A7BFE7E00BF3F53 /* LocationSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +77,15 @@
 		702BB3C62A716CAE00610C65 /* RootStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStore.swift; sourceTree = "<group>"; };
 		702BB3C82A716D4F00610C65 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		70AB913A2A7CBF7B00ECE03C /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		931C41582A816868005C1AEF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		931C415A2A816881005C1AEF /* Colors+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extensions.swift"; sourceTree = "<group>"; };
+		931C415C2A816899005C1AEF /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		931C415E2A8168A9005C1AEF /* Modifiers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modifiers+Extensions.swift"; sourceTree = "<group>"; };
+		931C41602A8168BA005C1AEF /* Paddings+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paddings+Extensions.swift"; sourceTree = "<group>"; };
+		931C41632A833315005C1AEF /* DepartureSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchBar.swift; sourceTree = "<group>"; };
+		931C41652A833330005C1AEF /* ArrivalSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalSearchBar.swift; sourceTree = "<group>"; };
 		93524B332A7B8CD100BF3F53 /* LocationSearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchStore.swift; sourceTree = "<group>"; };
-		93524B352A7BFE7E00BF3F53 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		93524B352A7BFE7E00BF3F53 /* LocationSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +138,7 @@
 		702BB3762A7163F900610C65 /* Finiens */ = {
 			isa = PBXGroup;
 			children = (
+				931C41572A816840005C1AEF /* DesignSystem */,
 				702BB3A82A71644600610C65 /* App */,
 				702BB3A12A71640100610C65 /* Feature */,
 				702BB3A22A71640B00610C65 /* Domain */,
@@ -235,10 +250,32 @@
 			children = (
 				702BB3C42A7167F900610C65 /* SearchMapView.swift */,
 				702BB3C22A7167EE00610C65 /* SearchMapStore.swift */,
-				93524B352A7BFE7E00BF3F53 /* SearchBar.swift */,
+				931C41622A8332E8005C1AEF /* SearchBar */,
 				93524B322A7B8CB300BF3F53 /* LocationSearch */,
 			);
 			path = SearchMap;
+			sourceTree = "<group>";
+		};
+		931C41572A816840005C1AEF /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				931C41582A816868005C1AEF /* Colors.swift */,
+				931C415A2A816881005C1AEF /* Colors+Extensions.swift */,
+				931C415C2A816899005C1AEF /* Modifiers.swift */,
+				931C415E2A8168A9005C1AEF /* Modifiers+Extensions.swift */,
+				931C41602A8168BA005C1AEF /* Paddings+Extensions.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		931C41622A8332E8005C1AEF /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				93524B352A7BFE7E00BF3F53 /* LocationSearchBar.swift */,
+				931C41632A833315005C1AEF /* DepartureSearchBar.swift */,
+				931C41652A833330005C1AEF /* ArrivalSearchBar.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		93524B322A7B8CB300BF3F53 /* LocationSearch */ = {
@@ -391,18 +428,25 @@
 				702BB3C12A71678500610C65 /* MenuStore.swift in Sources */,
 				702BB3BD2A71677200610C65 /* MenuView.swift in Sources */,
 				702BB3C72A716CAE00610C65 /* RootStore.swift in Sources */,
+				931C41662A833330005C1AEF /* ArrivalSearchBar.swift in Sources */,
 				702BB37A2A7163F900610C65 /* ContentView.swift in Sources */,
+				931C415B2A816881005C1AEF /* Colors+Extensions.swift in Sources */,
 				702BB3782A7163F900610C65 /* RootApp.swift in Sources */,
 				702BB3B22A7165C900610C65 /* MainTabStore.swift in Sources */,
 				702BB3C32A7167EE00610C65 /* SearchMapStore.swift in Sources */,
-				93524B362A7BFE7E00BF3F53 /* SearchBar.swift in Sources */,
+				931C41642A833315005C1AEF /* DepartureSearchBar.swift in Sources */,
+				93524B362A7BFE7E00BF3F53 /* LocationSearchBar.swift in Sources */,
 				702BB3B92A71676700610C65 /* HomeView.swift in Sources */,
+				931C41592A816868005C1AEF /* Colors.swift in Sources */,
 				702BB3C92A716D4F00610C65 /* RootView.swift in Sources */,
 				70AB913B2A7CBF7B00ECE03C /* LocationSearchView.swift in Sources */,
 				702BB3B72A7166AB00610C65 /* HomeStore.swift in Sources */,
 				702BB3B02A7165BC00610C65 /* MainTabView.swift in Sources */,
 				702BB3C52A7167F900610C65 /* SearchMapView.swift in Sources */,
+				931C415D2A816899005C1AEF /* Modifiers.swift in Sources */,
+				931C41612A8168BA005C1AEF /* Paddings+Extensions.swift in Sources */,
 				93524B342A7B8CD100BF3F53 /* LocationSearchStore.swift in Sources */,
+				931C415F2A8168A9005C1AEF /* Modifiers+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +618,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alom.Finiens;
+				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.maps.map.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -603,7 +647,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alom.Finiens;
+				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.maps.map.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

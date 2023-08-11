@@ -8,8 +8,12 @@
 import SwiftUI
 import ComposableArchitecture
 import NMapsMap
+import CoreLocation // 현재 위치 가져오기 위한 모듈
 
+// 지도 뷰 띄우는 코드 -> 격자로 표시됨
 struct NaverMapUIView: UIViewRepresentable {
+    let centerLatLng = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
+
     func makeUIView(context: Context) -> NMFMapView {
         return NMFMapView(frame: .zero)
     }
@@ -24,9 +28,8 @@ struct SearchMapView: View {
     let store: StoreOf<SearchMapStore>
 
     var body: some View {
-        @State var isShowingLocationSearchView: Bool = false
-        @State var region = NMFCameraPosition(NMGLatLng(lat: 37.54330366, lng: 127.04455548), zoom: 15, tilt: 0, heading: 0)
-
+        @State var departure: String = ""
+        @State var arrival: String = ""
 
         WithViewStore(store) { viewStore in
             ZStack {
@@ -34,23 +37,46 @@ struct SearchMapView: View {
                     .edgesIgnoringSafeArea(.top)
 
                 VStack {
-                    HStack {
-                        Button(action: {
-                            viewStore.send(.isTappedLocationSearchBar)
-                        }) {
-                            Text("장소 검색")
-                                .foregroundColor(Color(.gray))
+                    // 장소 검색 바
+                    if viewStore.isDefectedArrowButtonVisible {
+                        HStack {
+                            Button(action: {
+                                viewStore.send(.isTappedLocationSearchBar)
+                            }) {
+                                Text("장소 검색")
+                                    .foregroundColor(Color(.gray))
+                            }
+                            Spacer()
+                            Image(systemName: "magnifyingglass")
                         }
-                        Spacer()
-                        Image(systemName: "magnifyingglass")
+                        .padding()
+                        .frame(width: 353, height: 34)
+                        .background(Color(.white))
+                        .cornerRadius(8)
+                        .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
+                            
+                            LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
+                        }
                     }
-                    .padding()
-                    .frame(width: 353, height: 34)
-                    .background(Color(.white))
-                    .cornerRadius(8)
-                    .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
-                        
-                        LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
+                    //출발지-도착지 입력 바
+                    else {
+                        HStack {
+                            VStack {
+                                DepartureSearchBar(departure: $departure)
+
+                                ArrivalSearchBar(arrival: $arrival)
+                            }
+                            Button(action: {
+                                // 출발지 도착지 바뀌는 액션
+                            }) {
+                                Image(systemName: "arrow.up.arrow.down")
+                                    .foregroundColor(Color(.red))
+                            }
+                        }
+                        .padding()
+                        .frame(width: 353, height: 104)
+                        .background(Color(.white))
+                        .cornerRadius(20)
                     }
                     Spacer()
                     
@@ -69,13 +95,25 @@ struct SearchMapView: View {
                             
                             Spacer()
                             
-                            Button(action: {
-                                print("길찾기")
-                            }, label: {
-                                Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                            })
+                            VStack {
+                                if viewStore.isDefectedArrowButtonVisible {
+                                    Button(action: {
+                                        viewStore.send(.isTappedDefectedArrowButton)
+                                    }) {
+                                        Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
+                                            .resizable()
+                                            .frame(width: 40, height: 40)
+                                    }
+                                } else {
+                                    Button(action: {
+                                        viewStore.send(.isTappedDefectedArrowButton)
+                                    }) {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .resizable()
+                                            .frame(width: 40, height: 40)
+                                    }
+                                }
+                            }
                             .foregroundColor(Color(.red))
                             .background(Color.white)
                             .clipShape(Circle())
@@ -117,19 +155,6 @@ struct SearchMapView: View {
             }
         }
     }
-}
-
-struct UIMapView: UIViewRepresentable {
-    func makeUIView(context: Context) -> NMFNaverMapView {
-        let view = NMFNaverMapView()
-        view.showZoomControls = false
-        view.mapView.positionMode = .direction
-        view.mapView.zoomLevel = 17
-      
-        return view
-    }
-    
-    func updateUIView(_ uiView: NMFNaverMapView, context: Context) {}
 }
 
 struct SearchMapView_Previews: PreviewProvider {
