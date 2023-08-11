@@ -13,13 +13,14 @@ import CoreLocation // 현재 위치 가져오기 위한 모듈
 // 지도 뷰 띄우는 코드 -> 격자로 표시됨
 struct NaverMapUIView: UIViewRepresentable {
     let centerLatLng = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
-        
-    func updateUIView(_ uiView: NMFMapView, context: Context) {
-        uiView.moveCamera(NMFCameraUpdate(scrollTo: centerLatLng))
-    }
-    
+
     func makeUIView(context: Context) -> NMFMapView {
-        return NMFMapView(frame: UIScreen.main.bounds)
+        return NMFMapView(frame: .zero)
+    }
+
+    func updateUIView(_ uiView: NMFMapView, context: Context) {
+        let center = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
+        uiView.moveCamera(NMFCameraUpdate(scrollTo: center))
     }
 }
 
@@ -30,56 +31,52 @@ struct SearchMapView: View {
         @State var departure: String = ""
         @State var arrival: String = ""
 
-        @State var region = NMFCameraPosition(NMGLatLng(lat: 37.54330366, lng: 127.04455548), zoom: 15, tilt: 0, heading: 0)
-
         WithViewStore(store) { viewStore in
             ZStack {
                 NaverMapUIView()
                     .edgesIgnoringSafeArea(.top)
 
                 VStack {
-                    VStack {
-                        // 장소 검색 바
-                        if viewStore.isDefectedArrowButtonVisible {
-                            HStack {
-                                Button(action: {
-                                    viewStore.send(.isTappedDefectedArrowButton)
-                                }) {
-                                    Text("장소 검색")
-                                        .foregroundColor(Color(.gray))
-                                }
-                                Spacer()
-                                Image(systemName: "magnifyingglass")
+                    // 장소 검색 바
+                    if viewStore.isDefectedArrowButtonVisible {
+                        HStack {
+                            Button(action: {
+                                viewStore.send(.isTappedLocationSearchBar)
+                            }) {
+                                Text("장소 검색")
+                                    .foregroundColor(Color(.gray))
                             }
-                            .padding()
-                            .frame(width: 353, height: 34)
-                            .background(Color(.white))
-                            .cornerRadius(8)
-                            .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
-                                
-                                LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
-                            }
+                            Spacer()
+                            Image(systemName: "magnifyingglass")
                         }
-                        //출발지-도착지 입력 바
-                        else {
-                            HStack {
-                                VStack {
-                                    DepartureSearchBar(departure: $departure)
+                        .padding()
+                        .frame(width: 353, height: 34)
+                        .background(Color(.white))
+                        .cornerRadius(8)
+                        .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
+                            
+                            LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
+                        }
+                    }
+                    //출발지-도착지 입력 바
+                    else {
+                        HStack {
+                            VStack {
+                                DepartureSearchBar(departure: $departure)
 
-                                    ArrivalSearchBar(arrival: $arrival)
-                                }
-                                Button(action: {
-                                    // 출발지 도착지 바뀌는 액션
-                                }) {
-                                    Image(systemName: "arrow.up.arrow.down")
-                                        .foregroundColor(Color(.gray))
-                                }
+                                ArrivalSearchBar(arrival: $arrival)
                             }
-                            .padding()
-                            .frame(width: 353, height: 104)
-                            .background(Color(.white))
-                            .cornerRadius(20)
+                            Button(action: {
+                                // 출발지 도착지 바뀌는 액션
+                            }) {
+                                Image(systemName: "arrow.up.arrow.down")
+                                    .foregroundColor(Color(.red))
+                            }
                         }
+                        .padding()
+                        .frame(width: 353, height: 104)
+                        .background(Color(.white))
+                        .cornerRadius(20)
                     }
                     Spacer()
                     
