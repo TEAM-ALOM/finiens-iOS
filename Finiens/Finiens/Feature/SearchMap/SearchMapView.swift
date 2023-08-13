@@ -89,7 +89,7 @@ struct SearchMapView: View {
                             })
                             .font(Font.title.weight(.bold))
                             .frame(width: 40, height: 40)
-                            .foregroundColor(Color.keyColor)
+                            .foregroundColor(Color(.red))
                             .background(Color.white)
                             .clipShape(Circle())
                             

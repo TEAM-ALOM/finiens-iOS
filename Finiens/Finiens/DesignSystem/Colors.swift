@@ -23,6 +23,7 @@ enum AntennaColor: String {
     case publicTransportColor = "public-transport-color"
     case onFootColor = "on-foot-color"
     case bookmarkColor = "bookmark-color"
+    case busCommonColor = "bus-common-color"
     
     var color: Color {
         Color(self.rawValue)
