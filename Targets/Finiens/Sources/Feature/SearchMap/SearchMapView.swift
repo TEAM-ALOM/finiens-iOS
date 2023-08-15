@@ -8,33 +8,76 @@
 import SwiftUI
 import ComposableArchitecture
 import NMapsMap
-import CoreLocation // 현재 위치 가져오기 위한 모듈
+import CoreLocation
 
-// 지도 뷰 띄우는 코드 -> 격자로 표시됨
-struct NaverMapUIView: UIViewRepresentable {
-    let centerLatLng = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
-
-    func makeUIView(context: Context) -> NMFMapView {
-        return NMFMapView(frame: .zero)
+struct MapView: View {
+    var body: some View {
+        ZStack {
+            UIMapView()
+                .edgesIgnoringSafeArea(.top)
+        }
     }
+}
 
-    func updateUIView(_ uiView: NMFMapView, context: Context) {
-        let center = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
-        uiView.moveCamera(NMFCameraUpdate(scrollTo: center))
+struct UIMapView: UIViewRepresentable {
+    @State private var isScrollGestureEnabled = true
+    @State private var isZoomGestureEnabled = true // 더블탭 확대
+    @State private var showLocation = false // 내 위치 표시 여부
+
+
+    let coord = NMGLatLng(lat: 37.55062, lng: 127.07440)
+    let locationManager = CLLocationManager()
+
+    class Coordinator: NSObject, NMFMapViewCameraDelegate, CLLocationManagerDelegate {
+        var parent: UIMapView
+        
+        init(_ parent: UIMapView) {
+            self.parent = parent
+        }
     }
+    
+    func makeUIView(context: Context) -> NMFNaverMapView {
+        let view = NMFNaverMapView()
+        view.mapView.positionMode = .direction
+        view.mapView.zoomLevel = 17
+        view.showZoomControls = false // 제공되는 줌인아웃 버튼
+        
+        // 위치 설정
+        let cameraUpdate = NMFCameraUpdate(scrollTo: coord)
+        view.mapView.moveCamera(cameraUpdate)
+        print("위도: \(coord.lat), 경도: \(coord.lng)")
+
+        // 사용자 위치 정보 요청 설정
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = context.coordinator
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
+        // 줌인아웃 : 기존 네이버가 제공하는 버튼의 액션보다 매끄럽지 못함
+        NotificationCenter.default.addObserver(forName: Notification.Name("zoomIn"), object: nil, queue: nil) { _ in
+            view.mapView.zoomLevel += 0.6
+        }
+        NotificationCenter.default.addObserver(forName: Notification.Name("zoomOut"), object: nil, queue: nil) { _ in
+            view.mapView.zoomLevel -= 0.6
+        }
+
+        return view
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    func updateUIView(_ uiView: NMFNaverMapView, context: Context) {}
 }
 
 struct SearchMapView: View {
     let store: StoreOf<SearchMapStore>
 
     var body: some View {
-        @State var departure: String = ""
-        @State var arrival: String = ""
-
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack {
-                NaverMapUIView()
-                    .edgesIgnoringSafeArea(.top)
+                MapView()
 
                 VStack {
                     // 장소 검색 바
@@ -58,41 +101,17 @@ struct SearchMapView: View {
                             LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                         }
                     }
-                    //출발지-도착지 입력 바
                     else {
-                        HStack {
-                            VStack {
-                                DepartureSearchBar(departure: $departure)
-
-                                ArrivalSearchBar(arrival: $arrival)
-                            }
-                            Button(action: {
-                                // 출발지 도착지 바뀌는 액션
-                            }) {
-                                Image(systemName: "arrow.up.arrow.down")
-                                    .foregroundColor(Color(.red))
-                            }
-                        }
-                        .padding()
-                        .frame(width: 353, height: 104)
-                        .background(Color(.white))
-                        .cornerRadius(20)
+                        DepArrBar()
                     }
                     Spacer()
                     
                     VStack {
                         HStack {
-                            Button(action: {
-                                print("지도 화면 확대")
-                            }, label: {
-                                Image(systemName: "plus")
-                            })
-                            .font(Font.title.weight(.bold))
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(Color(.red))
-                            .background(Color.white)
-                            .clipShape(Circle())
-                            
+                            ZoomButton(image: "plus") {
+                                NotificationCenter.default.post(name: Notification.Name("zoomIn"), object: nil)
+                            }
+
                             Spacer()
                             
                             VStack {
@@ -121,17 +140,10 @@ struct SearchMapView: View {
                         .padding(.vertical, 5.0)
 
                         HStack {
-                            Button(action: {
-                                print("지도 화면 축소")
-                            }, label: {
-                                Image(systemName: "minus")
-                            })
-                            .font(Font.title.weight(.bold))
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(Color(.red))
-                            .background(Color.white)
-                            .clipShape(Circle())
-                            
+                            ZoomButton(image: "minus") {
+                                NotificationCenter.default.post(name: Notification.Name("zoomOut"), object: nil)
+                            }
+
                             Spacer()
                             
                             Button(action: {
