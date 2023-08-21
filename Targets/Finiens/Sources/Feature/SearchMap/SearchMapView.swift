@@ -73,6 +73,17 @@ struct UIMapView: UIViewRepresentable {
 
 struct SearchMapView: View {
     let store: StoreOf<SearchMapStore>
+    
+    @State var departure: String = ""
+    @State var arrival: String = ""
+    
+    func swapDepartureArrival() {
+        withAnimation {
+            let tmp = departure
+            departure = arrival
+            arrival = tmp
+        }
+    }
 
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -90,6 +101,7 @@ struct SearchMapView: View {
                                     .foregroundColor(Color(.gray))
                             }
                             Spacer()
+                            
                             Image(systemName: "magnifyingglass")
                         }
                         .padding()
@@ -101,8 +113,9 @@ struct SearchMapView: View {
                             LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                         }
                     }
+                    
                     else {
-                        DepArrBar()
+                        depArrBarView()
                     }
                     Spacer()
                     
@@ -166,6 +179,25 @@ struct SearchMapView: View {
                 .padding()
             }
         }
+    }
+    
+    private func depArrBarView() -> some View {
+        HStack {
+            VStack {
+                DepartureSearchBar(departure: $departure)
+                ArrivalSearchBar(arrival: $arrival)
+            }
+            Button(action: {
+                swapDepartureArrival()
+            }) {
+                Image(systemName: "arrow.up.arrow.down")
+                    .foregroundColor(Color(.red))
+            }
+        }
+        .padding()
+        .frame(width: 353, height: 104)
+        .background(Color(.white))
+        .cornerRadius(20)
     }
 }
 
