@@ -15,15 +15,14 @@ struct MapView: UIViewRepresentable {
     @State private var isScrollGestureEnabled = true
     @State private var isZoomGestureEnabled = true // 더블탭 확대
     @State private var showLocation = false // 내 위치 표시 여부
-
-
+    
     let coord = NMGLatLng(lat: 37.55062, lng: 127.07440)
     let locationManager = CLLocationManager()
 
     class Coordinator: NSObject, NMFMapViewCameraDelegate, CLLocationManagerDelegate {
-        var parent: UIMapView
+        var parent: MapView
         
-        init(_ parent: UIMapView) {
+        init(_ parent: MapView) {
             self.parent = parent
         }
     }
@@ -33,7 +32,7 @@ struct MapView: UIViewRepresentable {
         view.mapView.positionMode = .direction
         view.mapView.zoomLevel = 17
         view.showZoomControls = false // 제공되는 줌인아웃 버튼
-        
+                
         // 위치 설정
         let cameraUpdate = NMFCameraUpdate(scrollTo: coord)
         view.mapView.moveCamera(cameraUpdate)
@@ -52,5 +51,6 @@ struct MapView: UIViewRepresentable {
         Coordinator(self)
     }
     
-    func updateUIView(_ uiView: NMFNaverMapView, context: Context) {}
+    func updateUIView(_ uiView: NMFNaverMapView, context: Context) {
+    }
 }

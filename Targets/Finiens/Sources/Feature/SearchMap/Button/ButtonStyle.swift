@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ZoomButton: View {
+struct CircleButton: View {
     let image: String
     let action: () -> Void
     
@@ -21,5 +21,25 @@ struct ZoomButton: View {
                 .background(Color.white)
                 .clipShape(Circle())
         }
+    }
+}
+
+struct FrameStyle: ViewModifier {
+    var width: CGFloat
+    var height: CGFloat
+    var backgroundColor: Color
+    var cornerRadius: CGFloat
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(width: width, height: height)
+            .background(backgroundColor)
+            .cornerRadius(cornerRadius)
+    }
+}
+
+extension View {
+    func frameStyle(width: CGFloat, height: CGFloat, backgroundColor: Color, cornerRadius: CGFloat) -> some View {
+        self.modifier(FrameStyle(width: width, height: height, backgroundColor: backgroundColor, cornerRadius: cornerRadius))
     }
 }
