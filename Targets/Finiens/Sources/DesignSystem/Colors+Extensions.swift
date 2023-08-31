@@ -97,4 +97,9 @@ extension Color {
      안테나 디자인 시스템 Bookmark Color
      */
     static public let bookmarkColor = AntennaColor.bookmarkColor.color
+    
+    /**
+     안테나 디자인 시스템 Bus Common Color
+     */
+    static public let busCommonColor = AntennaColor.busCommonColor.color
 }
