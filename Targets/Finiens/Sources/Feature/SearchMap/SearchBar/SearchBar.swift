@@ -14,7 +14,6 @@ struct SearchBar: View {
 
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            
             // 장소 검색 바
             if viewStore.isDefectedArrowButtonVisible {
                 HStack {
@@ -36,7 +35,6 @@ struct SearchBar: View {
                     LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                 }
             }
-            //출발지-도착지 입력 바
             else {
                 DepArrBar()
             }
