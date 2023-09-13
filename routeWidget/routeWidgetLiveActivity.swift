@@ -9,7 +9,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct routeAttributes: ActivityAttributes {
+struct routeWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var value: Int
@@ -20,12 +20,12 @@ struct routeAttributes: ActivityAttributes {
     
 }
 
-struct routeLiveActivity: Widget {
+struct routeWidgetLiveActivity: Widget {
     @State private var progressValue: Double = 85.0 // 1~99
     let totalValue: Double = 100.0
     
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: routeAttributes.self) { context in
+        ActivityConfiguration(for: routeWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
                 Text("view")
@@ -119,9 +119,9 @@ struct humanProgressViewStyle: ProgressViewStyle {
     }
 }
 
-struct routeLiveActivity_Previews: PreviewProvider {
-    static let attributes = routeAttributes(name: "Me")
-    static let contentState = routeAttributes.ContentState(value: 3)
+struct routeWidgetLiveActivity_Previews: PreviewProvider {
+    static let attributes = routeWidgetAttributes(name: "Me")
+    static let contentState = routeWidgetAttributes.ContentState(value: 3)
 
     static var previews: some View {
         attributes

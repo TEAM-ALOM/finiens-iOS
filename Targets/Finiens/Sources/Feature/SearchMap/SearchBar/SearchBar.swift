@@ -31,12 +31,11 @@ struct SearchBar: View {
                 .background(Color(.white))
                 .cornerRadius(8)
                 .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
-                    
                     LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                 }
             }
             else {
-                DepArrBar()
+                DepArrBar();
             }
         }
     }
