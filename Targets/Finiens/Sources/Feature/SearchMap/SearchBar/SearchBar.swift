@@ -18,7 +18,7 @@ struct SearchBar: View {
             if viewStore.isDefectedArrowButtonVisible {
                 HStack {
                     Button(action: {
-                        viewStore.send(.isTappedLocationSearchBar)
+                        viewStore.send(.locationSearchBarTapped)
                     }) {
                         Text("장소 검색")
                             .foregroundColor(Color(.gray))
@@ -30,7 +30,7 @@ struct SearchBar: View {
                 .frame(width: 353, height: 34)
                 .background(Color(.white))
                 .cornerRadius(8)
-                .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
+                .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.locationSearchBarTapped)) {
                     LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                 }
             }

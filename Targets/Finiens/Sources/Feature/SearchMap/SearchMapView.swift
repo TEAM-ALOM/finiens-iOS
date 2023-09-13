@@ -35,19 +35,19 @@ struct SearchMapView: View {
                     VStack {
                         HStack {
                             CircleButton(image: "plus") {
-                                viewStore.send(.ZoomInButtonTapped)
+                                viewStore.send(.zoomInButtonTapped)
                             }
                             Spacer()
                             
                             VStack {
                                 if viewStore.isDefectedArrowButtonVisible {
                                     CircleButton(image: "arrow.triangle.turn.up.right.circle.fill") {
-                                        viewStore.send(.ColoredButtonTapped)
+                                        viewStore.send(.coloredButtonTapped)
                                     }
                                 }
                                 else {
                                     CircleButton(image: "xmark.circle.fill") {
-                                        viewStore.send(.ColoredButtonTapped)
+                                        viewStore.send(.coloredButtonTapped)
                                     }
                                 }
                             }
@@ -56,12 +56,12 @@ struct SearchMapView: View {
 
                         HStack {
                             CircleButton(image: "minus") {
-                                viewStore.send(.ZoomOutButtonTapped)
+                                viewStore.send(.zoomOutButtonTapped)
                             }
                             Spacer()
                             
                             CircleButton(image: "scope") {
-                                viewStore.send(.ScopeButtonTapped)
+                                viewStore.send(.scopeButtonTapped)
                             }
                         }
                         .padding(.vertical, 5.0)
