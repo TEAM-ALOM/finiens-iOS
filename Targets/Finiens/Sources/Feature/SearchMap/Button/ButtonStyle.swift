@@ -17,8 +17,8 @@ struct CircleButton: View {
             Image(systemName: image)
                 .font(Font.title.weight(.bold))
                 .frame(width: 40, height: 40)
-                .foregroundColor(Color(.red))
-                .background(Color.white)
+                .foregroundColor(Color.keyColor)
+                .background(Color.shapeColor)
                 .clipShape(Circle())
         }
     }

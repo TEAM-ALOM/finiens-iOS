@@ -30,12 +30,12 @@ struct DepArrBar: View {
                 swapDepartureArrival()
             }) {
                 Image(systemName: "arrow.up.arrow.down")
-                    .foregroundColor(Color(.red))
+                    .foregroundColor(Color.keyColor)
             }
         }
         .padding()
         .frame(width: 353, height: 104)
-        .background(Color(.white))
+        .background(Color.shapeColor)
         .cornerRadius(20)
     }
 }

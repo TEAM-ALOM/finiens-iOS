@@ -21,14 +21,14 @@ struct SearchBar: View {
                         viewStore.send(.locationSearchBarTapped)
                     }) {
                         Text("장소 검색")
-                            .foregroundColor(Color(.gray))
+                            .foregroundColor(Color.textQuaternaryColor)
                     }
                     Spacer()
                     Image(systemName: "magnifyingglass")
                 }
                 .padding()
                 .frame(width: 353, height: 34)
-                .background(Color(.white))
+                .background(Color.shapeColor)
                 .cornerRadius(8)
                 .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.locationSearchBarTapped)) {
                     LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))

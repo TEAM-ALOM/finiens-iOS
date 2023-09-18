@@ -20,7 +20,7 @@ struct DepartureSearchBar: View {
                     self.departure = ""
                 }) {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.shapeQuaternaryColor)
                 }
             } else {
                 EmptyView()
@@ -28,9 +28,9 @@ struct DepartureSearchBar: View {
         }
         .padding()
         .frame(width: 292, height: 34)
-        .background(Color(uiColor: .secondarySystemBackground))
-        .accentColor(.red)
-        .foregroundColor(.black)
+        .background(Color.shapeSecondaryColor)
+        .accentColor(.keyColor)
+        .foregroundColor(.textColor)
         .cornerRadius(10)
 
     }

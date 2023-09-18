@@ -22,17 +22,17 @@ struct LocationSearchBar: View {
                         self.address = ""
                     }) {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
+                            .foregroundColor(.shapeQuaternaryColor)
                     }
                 } else {
                     EmptyView()
                 }
             }
-            .accentColor(.red)
-            .foregroundColor(.black)
+            .accentColor(.keyColor)
+            .foregroundColor(.textColor)
             .padding()
             .frame(width: 361, height: 34)
-            .background(Color(.systemGray6))
+            .background(Color.shapeSecondaryColor)
             .cornerRadius(10)
 
         }
