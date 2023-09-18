@@ -20,7 +20,7 @@ struct ArrivalSearchBar: View {
                     self.arrival = ""
                 }) {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.shapeQuaternaryColor)
                 }
             } else {
                 EmptyView()
@@ -28,9 +28,9 @@ struct ArrivalSearchBar: View {
         }
         .padding()
         .frame(width: 292, height: 34)
-        .background(Color(uiColor: .secondarySystemBackground))
-        .accentColor(.red)
-        .foregroundColor(.black)
+        .background(Color.shapeSecondaryColor)
+        .accentColor(.keyColor)
+        .foregroundColor(.textQuaternaryColor)
         .cornerRadius(10)
     }
 }

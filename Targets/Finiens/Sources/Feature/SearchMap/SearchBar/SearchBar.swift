@@ -14,31 +14,28 @@ struct SearchBar: View {
 
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            
             // 장소 검색 바
             if viewStore.isDefectedArrowButtonVisible {
                 HStack {
                     Button(action: {
-                        viewStore.send(.isTappedLocationSearchBar)
+                        viewStore.send(.locationSearchBarTapped)
                     }) {
                         Text("장소 검색")
-                            .foregroundColor(Color(.gray))
+                            .foregroundColor(Color.textQuaternaryColor)
                     }
                     Spacer()
                     Image(systemName: "magnifyingglass")
                 }
                 .padding()
                 .frame(width: 353, height: 34)
-                .background(Color(.white))
+                .background(Color.shapeColor)
                 .cornerRadius(8)
-                .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.isTappedLocationSearchBar)) {
-                    
+                .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.locationSearchBarTapped)) {
                     LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
                 }
             }
-            //출발지-도착지 입력 바
             else {
-                DepArrBar()
+                DepArrBar();
             }
         }
     }

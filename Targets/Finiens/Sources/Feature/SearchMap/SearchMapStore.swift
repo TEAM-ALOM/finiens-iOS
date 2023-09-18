@@ -20,10 +20,10 @@ struct SearchMapStore: Reducer {
     
     enum Action: Equatable {
         case locationSearchBarTapped
-        case ZoomInButtonTapped
-        case ZoomOutButtonTapped
-        case ColoredButtonTapped
-        case ScopeButtonTapped
+        case zoomInButtonTapped
+        case zoomOutButtonTapped
+        case coloredButtonTapped
+        case scopeButtonTapped
         
         case locationSearch(LocationSearchStore.Action)
     }
@@ -35,19 +35,19 @@ struct SearchMapStore: Reducer {
                 state.isShowingLocationSearchView.toggle()
                 return .none
                 
-            case .ZoomInButtonTapped:
+            case .zoomInButtonTapped:
                 state.zoomLevel += 0.6
                 return .none
                 
-            case .ZoomOutButtonTapped:
+            case .zoomOutButtonTapped:
                 state.zoomLevel += 0.6
                 return .none
 
-            case .ColoredButtonTapped:
+            case .coloredButtonTapped:
                 state.isDefectedArrowButtonVisible.toggle()
                 return .none
                 
-            case .ScopeButtonTapped:
+            case .scopeButtonTapped:
                 return .none
                 
             default:

@@ -33,7 +33,7 @@ struct LocationSearchView: View {
                                     presentationMode.wrappedValue.dismiss() // dismiss()가 활성화 되지 않음
                                 }) {
                                     Text("닫기")
-                                        .foregroundColor(Color(.red))
+                                        .foregroundColor(Color.keyColor)
                                 }
                             }
                         }

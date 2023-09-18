@@ -35,19 +35,19 @@ struct SearchMapView: View {
                     VStack {
                         HStack {
                             CircleButton(image: "plus") {
-                                viewStore.send(.ZoomInButtonTapped)
+                                viewStore.send(.zoomInButtonTapped)
                             }
                             Spacer()
                             
                             VStack {
                                 if viewStore.isDefectedArrowButtonVisible {
                                     CircleButton(image: "arrow.triangle.turn.up.right.circle.fill") {
-                                        viewStore.send(.ColoredButtonTapped)
+                                        viewStore.send(.coloredButtonTapped)
                                     }
                                 }
                                 else {
                                     CircleButton(image: "xmark.circle.fill") {
-                                        viewStore.send(.ColoredButtonTapped)
+                                        viewStore.send(.coloredButtonTapped)
                                     }
                                 }
                             }
@@ -56,12 +56,12 @@ struct SearchMapView: View {
 
                         HStack {
                             CircleButton(image: "minus") {
-                                viewStore.send(.ZoomOutButtonTapped)
+                                viewStore.send(.zoomOutButtonTapped)
                             }
                             Spacer()
                             
                             CircleButton(image: "scope") {
-                                viewStore.send(.ScopeButtonTapped)
+                                viewStore.send(.scopeButtonTapped)
                             }
                         }
                         .padding(.vertical, 5.0)
@@ -79,14 +79,14 @@ struct SearchMapView: View {
                     viewStore.send(.locationSearchBarTapped)
                 }) {
                     Text("장소 검색")
-                        .foregroundColor(Color(.gray))
+                        .foregroundColor(Color.textQuaternaryColor)
                 }
                 Spacer()
                 
                 Image(systemName: "magnifyingglass")
             }
             .padding()
-            .frameStyle(width: 353, height: 34, backgroundColor: .white, cornerRadius: 8)
+            .frameStyle(width: 353, height: 34, backgroundColor: .shapeColor, cornerRadius: 8)
             .fullScreenCover(isPresented: viewStore.binding(get: \.isShowingLocationSearchView, send: SearchMapStore.Action.locationSearchBarTapped)) {
                 LocationSearchView(store: self.store.scope(state: \.locationSearch, action: SearchMapStore.Action.locationSearch))
             }
@@ -102,11 +102,11 @@ struct SearchMapView: View {
                 swapDepartureArrival()
             }) {
                 Image(systemName: "arrow.up.arrow.down")
-                    .foregroundColor(Color(.red))
+                    .foregroundColor(Color.keyColor)
             }
         }
         .padding()
-        .frameStyle(width: 353, height: 104, backgroundColor: .white, cornerRadius: 20)
+        .frameStyle(width: 353, height: 104, backgroundColor: .shapeColor, cornerRadius: 20)
     }
     
     private func swapDepartureArrival() {
